@@ -1,0 +1,7 @@
+- This is web bases Web appliction
+- It is for Customer Relation Ship management
+- Used:-
+- HTML,CSS,JS,BOOTSTRAP
+- PYTHON,DJANGO,SQLLITE3,SQL
+- VSCODE,GITHUB,GIT
+- 
