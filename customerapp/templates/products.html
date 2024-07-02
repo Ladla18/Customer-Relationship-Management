@@ -1,0 +1,44 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View All Products</h1>   
+              
+        </div>
+        
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>ProductNAme</th>
+                    <th>MFG Date</th>
+                    <th>EXP Date</th>
+                    <th>Price</th>
+                    <th>Product Image</th>
+                    <th>Buy</th>
+                </tr>
+
+                {% for p in prod %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{p.productname}}</td>
+                    <td>{{p.mfgdate}}</td>
+                    <td>{{p.expdate}}</td>
+                    <td>{{p.price}}</td>
+                    <td>
+                        <img src="{{p.productpic.url}}" alt="">
+                    </td>
+                    <td>
+                        <a href="{% url 'customerapp:buy' id=p.id %}">
+                            <button class="btn btn-success">Buy</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock body %}

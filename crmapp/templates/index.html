@@ -1,0 +1,106 @@
+{% extends "parent.html" %}
+
+{% block main %}
+<div class="container">
+    <!-- Welcome Section -->
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mt-5 display-4">Welcome to Marc Labs</h1>
+            <p class="lead">We provide innovative solutions to your needs.</p>
+            <ul class="list-unstyled">
+                <li>High-Quality Products</li>
+                <li>Excellent Customer Service</li>
+                <li>Global Reach</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Services, Team, News Sections -->
+    <div class="row mt-5">
+        <div class="col-lg-4 text-center">
+            <h3 class="mt-5">Our Services</h3>
+            <p>Explore our range of services tailored to meet your needs.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="col-lg-4 text-center">
+            <h3 class="mt-5">Our Team</h3>
+            <p>Meet the talented individuals behind our company's success.</p>
+            <a href="#" class="btn btn-primary">Meet the Team</a>
+        </div>
+        <div class="col-lg-4 text-center">
+            <h3 class="mt-5">Latest News</h3>
+            <p>Stay updated with our latest announcements and achievements.</p>
+            <a href="#" class="btn btn-primary">Read News</a>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="row mt-5">
+        <div class="col-lg-12 text-center">
+            <h3 class="mt-5">Testimonials</h3>
+            <p>See what our clients have to say about their experience with us.</p>
+            <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p class="testimonial">"Marc Labs transformed our business with their innovative solutions!"</p>
+                        <p class="author">- Client A</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial">"Exceptional customer service and top-quality products!"</p>
+                        <p class="author">- Client B</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial">"Their global reach and expertise are unmatched."</p>
+                        <p class="author">- Client C</p>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="row mt-5">
+        <div class="col-lg-12 text-center">
+            <h3>Our Portfolio</h3>
+            <p>Take a look at some of our successful projects and happy clients.</p>
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdvcmt8ZW58MHx8fHwxNjM3MDQ1MzU1&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded" alt="Portfolio 1">
+                    <h5 class="mt-2">Project 1</h5>
+                    <p>Project 1 description</p>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdvcmt8ZW58MHx8fHwxNjM3MDQ1MzU1&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded" alt="Portfolio 2">
+                    <h5 class="mt-2">Project 2</h5>
+                    <p>Project 2 description</p>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdvcmt8ZW58MHx8fHwxNjM3MDQ1MzU1&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded" alt="Portfolio 3">
+                    <h5 class="mt-2">Project 3</h5>
+                    <p>Project 3 description</p>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary mt-3">View More Projects</a>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="row mt-5 bg-light py-5">
+        <div class="col-lg-12 text-center">
+            <h3>Ready to Get Started?</h3>
+            <p>Contact us today to discuss your needs and see how we can help you achieve your goals.</p>
+            <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}

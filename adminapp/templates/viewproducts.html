@@ -1,0 +1,51 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Products</h1>   
+              
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-sm-12">
+                <table class="table table-bordered" style="margin: auto;">
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>MFG Date</th>
+                        <th>EXP Date</th>
+                        <th>Price</th>
+                        <th>Product Image</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for p in prod %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{p.productname}}</td>
+                        <td>{{p.mfgdate}}</td>
+                        <td>{{p.expdate}}</td>
+                        <td>{{p.price}}</td>
+                        <td>
+                            <img src="{{p.productpic.url}}" style="width: 150px; height: 150px;" alt="">
+                        </td>
+                        <td>
+                            <a href="{% url 'adminapp:delp' id=p.id %}">
+                                <button class="btn btn-danger" onclick="del();">Delete</button>
+                            </a>
+                        </td>
+                        
+                        
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function del(){
+            confirm("Are You sure you want to delete")
+        }
+    </script>
+{% endblock body %}

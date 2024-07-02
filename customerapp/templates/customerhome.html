@@ -1,0 +1,173 @@
+{% extends "customerparent.html" %}
+{% load static %}
+{% block body %}
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Welcome to Your Dashboard</h1>
+                <p class="lead">Manage your account, view recent activities, and explore our services.</p>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Account Summary
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Name:</strong>  {{cust.name}}</p>
+                        <p><strong>Email:</strong> {{cust.emailaddress}}</p>
+                        <p><strong>Member Since:</strong> {{cust.posteddate}}</p>
+                        
+                        <a href="{% url 'customerapp:viewprofile' %}" class="btn btn-outline-primary btn-block">Edit Profile</a>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-white">
+                        News & Updates
+                    </div>
+                    <div class="card-body">
+                        <div class="news-item mb-3">
+                            <h5>New Feature Release</h5>
+                            <p>We have just launched a new feature that will enhance your experience.</p>
+                        </div>
+                        <div class="news-item mb-3">
+                            <h5>Scheduled Maintenance</h5>
+                            <p>Our system will be down for maintenance on May 30th from 1 AM to 3 AM.</p>
+                        </div>
+                        <div class="news-item">
+                            <h5>Exclusive Offers</h5>
+                            <p>Check out our exclusive offers available this month.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Customer Testimonials
+                    </div>
+                    <div class="card-body">
+                        <div class="testimonial-item mb-3">
+                            <p>"Excellent service and great features!" - <strong>Jane Smith</strong></p>
+                        </div>
+                        <div class="testimonial-item mb-3">
+                            <p>"I love the new updates. Keep up the good work!" - <strong>Michael Johnson</strong></p>
+                        </div>
+                        <div class="testimonial-item">
+                            <p>"Fantastic user experience!" - <strong>Emily Davis</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        Recent Activities
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-item mb-3">
+                            {% for o in ord %}
+                            <h5>Order #{{o.productname}}</h5>
+                            <p>You placed an order for a new {{o.productname}} on {{o.buydate}}. <a href="#">View details</a></p>
+                            {% endfor %}
+                        </div>
+                        <div class="activity-item mb-3">
+                            <h5>Profile Updated</h5>
+                            <p>You updated your profile information on May 10, 2024. <a href="#">View profile</a></p>
+                        </div>
+                        <div class="activity-item mb-3">
+                            <h5>Subscription Renewed</h5>
+                            <p>Your subscription was renewed on May 1, 2024. <a href="#">Manage subscription</a></p>
+                        </div>
+                        <div class="activity-item">
+                            <h5>Support Ticket Closed</h5>
+                            <p>Your support ticket #789 was closed on April 28, 2024. <a href="#">View ticket</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+Reccommended Products
+                    </div>
+                    <div class="row">
+                        <!-- Product Card 1 -->
+                        <div class="col-md-4">
+                          <div class="card product-card">
+                            <img src="{% static 'com0004.jpg' %}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                              <h5 class="card-title">Product 1</h5>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                              <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Product Card 2 -->
+                        <div class="col-md-4">
+                          <div class="card product-card">
+                            <img src="{%static 'images.jpeg' %}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                              <h5 class="card-title">Product 2</h5>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                              <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Product Card 3 -->
+                        <div class="col-md-4">
+                          <div class="card product-card">
+                            <img src="{% static 'com0004.jpg' %}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                              <h5 class="card-title">Product 3</h5>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                              <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+             <!-- Recent Orders Section -->
+        <div class="row mt-4">
+            <div class="col-sm-12">
+                <h2 class="text-center bg-warning border rounded-3">Recent Orders</h2>
+                <table class="table table-hover bg-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for o in ord %}
+                        <tr>
+                            <td>{{o.productname}}</td>
+                            <td>{{o.buydate}}</td>
+                            <td><span class="badge badge-info">Shipped</span></td>
+                            <td>{{o.price}}</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">View</a></td>
+                        </tr>
+                {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+                
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    </script>
+{% endblock body %}

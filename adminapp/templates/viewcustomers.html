@@ -1,0 +1,32 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View All Customer</h1>   
+              <table class="table table-bordered text-light " style="margin: auto;">
+                <tr class="text-center bg-danger">
+                    <th>SNo</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                    <th>Email Address</th>
+                    <th>Reg Date</th>
+                </tr>
+                
+                    {% for c in cust %}
+                   <tr class="bg-success">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.gender}}</td>
+                    <td>{{c.address}}</td>
+                    <td>{{c.contactno}}</td>
+                    <td>{{c.emailaddress}}</td>
+                    <td>{{c.regdate}}</td>
+                   </tr>
+                    {% endfor %}
+                
+              </table>
+        </div>
+    </div>
+{% endblock body %}

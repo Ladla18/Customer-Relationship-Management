@@ -1,0 +1,38 @@
+{% extends "customerparent.html" %}
+
+{% block body %}              
+
+<h1 class="text-center">Feedback/Complaints</h1>
+{% if msg %}
+<p class="text-ligt">{{msg}}</p>
+{% endif %}
+<form action="" method="post" class="form-group">
+{% csrf_token %}
+    <table class="table">
+        <tr>
+            <td>Select Response Type</td>
+            <td>
+                <select name="responsetype" class="form-control text-light"    id="">
+                    <option class="form-control" value="feedback">Feedback</option>
+                    <option class="form-control" value="complaint">Complaints</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Subject</td>
+            <td><input type="text" class="form-control"  name="subject" id=""></td>
+        </tr>
+        <tr>
+            <td>Response text</td>
+            <td><input type="text" class="form-control"  name="responsetext" id=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" class="form-control btn bg-success"  value="Submit"></td>
+        </tr>
+    </table>
+
+</form>
+
+
+{% endblock body %}

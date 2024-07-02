@@ -1,0 +1,46 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Add Product</h1>  
+            {% if msg %}
+            <p class="text-light text-center bg-success">{{msg}}</p>
+            {% endif %} 
+              <form method="post" class="form-group" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table text-light " style="margin: auto; width: 60%;">
+                    <tr>
+                        <td>Enter Product Name</td>
+                        <td><input type="text" name="productname" class="form-control text-light" required id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Enter MFG date</td>
+                        <td><input type="date" name="mfgdate" class="form-control text-light" required+ id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Enter EXP Date</td>
+                        <td><input type="date" name="expdate" class="form-control text-light" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="number" name="price" id="" required class="form-control text-light"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Pic</td>
+                        <td><input type="file" name="productpic" id="" class="form-control text-light"></td>
+                    </tr>
+                   <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Add Product</button>
+                    </td>
+                   </tr>
+
+                </table>
+              </form>
+        </div>
+
+      
+
+    </div>
+{% endblock body %}

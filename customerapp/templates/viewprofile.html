@@ -1,0 +1,46 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Your Profile</h1>   
+            {% if msg %}
+            <p class="text-center text-success">{{msg}}</p>
+            {% endif %}
+              <form class="form-group" action="" method="post">
+                {% csrf_token %}
+                <table class="table text-light" style="margin: auto;width: 60%;">
+                    <tr>
+                        <td>Name :</td>
+                        <td><input type="text" name="name" id="" value="{{cust.name}}" class="form-control text-light"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender : </td>
+                        <td><input type="text" name="gender" value="{{cust.gender}}" class="form-control text-light" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Address : </td>
+                        <td><textarea name="address" class="form-control text-light"  id="">{{cust.address}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Contact No : </td>
+                        <td><input type="text" class="form-control text-light" value="{{cust.contactno}}" name="contactno" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Email Address : </td>
+                        <td><input type="text" name="emailaddress" value="{{cust.emailaddress}}" readonly class="form-control text-dark" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Upload Image</td>
+                        <td>
+                            <input type="file" name="profilepic" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" class="btn btn-success">Update</button></td>
+                    </tr>
+                </table>
+              </form> 
+        </div>
+    </div>
+{% endblock body %}

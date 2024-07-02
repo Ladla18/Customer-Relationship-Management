@@ -1,0 +1,13 @@
+.testimonial {
+    font-style: italic;
+}
+.author {
+    font-weight: bold;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+}
+.bg-light {
+    background-color: #f8f9fa !important;
+}

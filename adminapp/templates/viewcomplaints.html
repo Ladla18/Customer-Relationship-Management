@@ -1,0 +1,37 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Complaints</h1>   
+              <table class="table table-bordered" style="margin: auto;">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Response Type</th>
+                    <th>Subject</th>
+                    <th>Response Text</th>
+                    <th>Posted Date</th>
+                </tr>
+                {% for c in comp %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.contactno}}</td>
+                    <td>{{c.emailaddress}}</td>
+                    <td>{{c.responsetype}}</td>
+                    <td>{{c.subject}}</td>
+                    <td>{{c.responsetext}}</td>
+                    <td>{{c.posteddate}}</td>
+                    <td>
+                        <a href="{% url 'adminapp:delcomp' id=c.id %}">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+              </table>
+        </div>
+    </div>
+{% endblock body %}

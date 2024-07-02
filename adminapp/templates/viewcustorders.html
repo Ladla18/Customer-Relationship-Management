@@ -1,0 +1,31 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Customer Orders</h1>  
+           <table class="table table-bordered" style="margin: auto;">
+            <tr class="bg-danger text-light">
+                <th>ID</th>
+                <th>Cust Name</th>
+                <th>Cust Email</th>
+                <th>Cust Contact No</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Buy Date</th>
+            </tr>
+            {% for o in ord %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{o.name}}</td>
+                <td>{{o.emailaddress}}</td>
+                <td>{{o.contactno}}</td>
+                <td>{{o.productname}}</td>
+                <td>{{o.price}}</td>
+                <td>{{o.buydate}}</td>
+            </tr>
+            {% endfor %}
+
+           </table>
+        </div>
+    </div>
+{% endblock body %}

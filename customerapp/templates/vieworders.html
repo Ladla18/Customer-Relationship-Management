@@ -1,0 +1,32 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Your Orders</h1>   
+            {% for o in ord %}
+              <div class="row mt-5">
+                <div class="col-sm-6">
+                   <div class="float-end bg-dark" style="height: 110px; width: 200px;">
+                    <img src="{{o.prodpic.url}}" style="width: 100px;" class="float-end me-5 mt-5" alt="Image Not available">
+                   </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row bg-secondary border rounded-4 w-75">
+                        <div class="col-sm-12">
+                            <h4 class="bg-primary p-2">Item Name : {{o.productname}}</h4>
+                            <h5>Price: {{o.price}} Rs</h5>
+                            <p>Order Placed On : {{o.buydate}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+              {% endfor %}
+        </div>
+        
+    </div>
+
+    
+        
+    
+{% endblock body %}

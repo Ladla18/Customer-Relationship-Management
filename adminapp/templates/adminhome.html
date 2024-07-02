@@ -1,0 +1,154 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Welcome to the Admin Dashboard</h1>
+                <p class="lead">Manage your platform, view recent activities, and access administrative tools.</p>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Quick Stats
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Users:</strong> {{cust}}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Orders:</strong> {{order}}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Compaints:</strong> {{comp}}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Feedback:</strong> {{res}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-warning text-white">
+                        News & Updates
+                    </div>
+                    <div class="card-body">
+                        <div class="news-item mb-3">
+                            <h5>New Feature Release</h5>
+                            <p>We have just launched a new feature that will enhance your experience.</p>
+                        </div>
+                        <div class="news-item mb-3">
+                            <h5>Scheduled Maintenance</h5>
+                            <p>Our system will be down for maintenance on May 30th from 1 AM to 3 AM.</p>
+                        </div>
+                        <div class="news-item">
+                            <h5>Exclusive Offers</h5>
+                            <p>Check out our exclusive offers available this month.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        Recent Activities
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-item mb-3">
+                            <h5>New User Registered</h5>
+                            <p>User <a href="#">{{latestUser.emailaddress}}</a> registered on {{reg}}</p>
+                        </div>
+                        <div class="activity-item mb-3">
+                            <h5>Order #{{ord.productname}}</h5>
+                            <p>An order for a new {{ord.productname}} was placed on {{buyd}}. <a href="#">View details</a></p>
+                        </div>
+                        <div class="activity-item mb-3">
+                            <h5>Support Ticket #123 Closed</h5>
+                            <p>The support ticket raised by <a href="#">jane.doe@example.com</a> was closed on May 19, 2024.</p>
+                        </div>
+                        <div class="activity-item mb-3">
+                            <h5>Product #456 Updated</h5>
+                            <p>The product details for "Wireless Headphones" were updated on May 18, 2024. <a href="#">View product</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="card mt-4">
+                    <div class="card-header bg-info text-white">
+                        Management Tools
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">User Management</a>
+                            <a href="#" class="list-group-item list-group-item-action">Order Management</a>
+                            <a href="#" class="list-group-item list-group-item-action">Product Management</a>
+                            <a href="#" class="list-group-item list-group-item-action">Support Tickets</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        Financial Summary
+                    </div>
+                    <div class="card-body">
+                        <h5>Total Revenue: $45,678</h5>
+                        <p>May 2024</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
+                        <h5>Total Expenses: $12,345</h5>
+                        <p>May 2024</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                        <h5>Profit: $33,333</h5>
+                        <p>May 2024</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-secondary text-white">
+                        Recent Messages
+                    </div>
+                    <div class="card-body">
+                        <div class="message-item mb-3">
+                            <h6>From: {{enq.emailaddress}}</h6>
+                            <p>{{enq.message}}.</p>
+                        </div>
+                        <div class="message-item mb-3">
+                            <h6>From: {{latest_complaint_response.emailaddress}}</h6>
+                            <p>{{latest_complaint_response.responsetext}}.</p>
+                        </div>
+                        <div class="message-item">
+                            <h6>From: admin@example.com</h6>
+                            <p>Monthly performance report is ready for review.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+       
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+{% endblock body %}
