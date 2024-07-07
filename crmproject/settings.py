@@ -77,16 +77,16 @@ WSGI_APPLICATION = 'crmproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',      # Replace with your database name
-        'USER': 'root',      # Replace with your database username
-        'PASSWORD': 'JySlHXsVLBeTvjuLpkfOVwPNsiOntgJs',  # Replace with your database password
-        'HOST': 'viaduct.proxy.rlwy.net',              # Replace with your database host (e.g., 'localhost')
-        'PORT': '55781',                   # Replace with your database port (leave as '3306' if default)
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',      # Replace with your database name
+#         'USER': 'root',      # Replace with your database username
+#         'PASSWORD': 'JySlHXsVLBeTvjuLpkfOVwPNsiOntgJs',  # Replace with your database password
+#         'HOST': 'viaduct.proxy.rlwy.net',              # Replace with your database host (e.g., 'localhost')
+#         'PORT': '55781',                   # Replace with your database port (leave as '3306' if default)
+#     }
+# }
 
 
 # Password validation
@@ -124,7 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # Default primary key field type
