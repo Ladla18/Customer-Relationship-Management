@@ -12,9 +12,3 @@
       "dest": "crmproject/wsgi.py"
     }
   ],
-  "env": {
-    "MYSQLCLIENT_CFLAGS": "/usr/include/mysql",
-    "MYSQLCLIENT_LDFLAGS": "-L/usr/lib/x86_64-linux-gnu -lmysqlclient"
-  },
-  "installCommand": "pip install -r requirements.txt"
-}
