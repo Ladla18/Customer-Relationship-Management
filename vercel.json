@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "builds": [{
         "src": "crmproject/wsgi.py",
         "use": "@vercel/python",
@@ -20,3 +21,18 @@
         }
     ]
 }
+=======
+  "version": 2,
+  "builds": [
+    {
+      "src": "crmproject/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "crmproject/wsgi.py"
+    }
+  ],
+>>>>>>> 33054574be3c453190fba1eaa16da50569282edc
